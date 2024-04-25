@@ -20,7 +20,10 @@
  */
 
 function evenOccurrence(arr) {
-  // Write your code here
+  if (arr.len === 0) return null;
+  const freq = arr.reduce((ac, el) => ({ ...ac, [el]: 1 + (ac[el] || 0) }), {});
+  for (let item of arr) { if (freq[item] % 2 == 0) return item; }
+  return null;
 }
 
 // Test cases
